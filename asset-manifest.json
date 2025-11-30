@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/temple/static/css/main.df30d632.css",
-    "main.js": "/temple/static/js/main.d2a97e67.js",
+    "main.js": "/temple/static/js/main.83b56403.js",
     "index.html": "/temple/index.html",
     "main.df30d632.css.map": "/temple/static/css/main.df30d632.css.map",
-    "main.d2a97e67.js.map": "/temple/static/js/main.d2a97e67.js.map"
+    "main.83b56403.js.map": "/temple/static/js/main.83b56403.js.map"
   },
   "entrypoints": [
     "static/css/main.df30d632.css",
-    "static/js/main.d2a97e67.js"
+    "static/js/main.83b56403.js"
   ]
 }
