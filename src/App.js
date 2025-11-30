@@ -4,9 +4,9 @@ import liff from '@line/liff';
 import './App.css';
 import { CONFIG, FORTUNES } from './data';
 
-// 圖片資源
-const IMG_LOGO = '/r69.png'; 
-const IMG_TENGA = '/toss.png'; 
+// 圖片資源 (使用 process.env.PUBLIC_URL 自動抓取正確路徑)
+const IMG_LOGO = process.env.PUBLIC_URL + '/r69.png'; 
+const IMG_TENGA = process.env.PUBLIC_URL + '/toss.png';
 
 function App() {
   // === State 管理 ===
@@ -297,7 +297,7 @@ function App() {
       return (
         <div style={{...boxStyle, background:'#f0fdf4'}}>
           <p style={titleStyle}>Ocard 會員專屬</p>
-          <div style={contentStyle}>已記錄您的資料，請出示畫面核銷。</div>
+          <div style={contentStyle}>已記錄您的資料，請出示畫面核銷</div>
           {/* 修正 3: 使用 button 代替無效 href */}
           <button className="action-link" style={{...linkStyle, color:'#16a34a'}}>查看優惠券 →</button>
         </div>
@@ -328,33 +328,36 @@ function App() {
              {/* 根據不同 Modal 顯示不同內容 */}
              {activeModal === 'guide-discord' && (
                 <>
-                  <p>1. <b>身分驗證</b>：授權 Discord 帳號以確認身分。</p>
-                  <p>2. <b>每日一籤</b>：每 3 小時可求籤一次。</p>
-                  <p>3. <b>自動領取</b>：求籤後機器人會自動發放身分組。</p>
+                  <p>1. <b>求一份雞緣</b>：在神廟中虔誠祈禱，抽取專屬於你的籤詩，探索你的尺寸指引</p>
+                  <p>2. <b>每日一籤</b>：每 3 小時可求籤一次</p>
+                  <p>3. <b>自動領取</b>：求籤後機器人會自動發放身分組</p>
                 </>
              )}
              {activeModal === 'prizes-discord' && (
-                <p>【專屬身分組】 x 1<br/>累積籤王次數可解鎖隱藏頻道</p>
+                <p><a href='https://www.rxinglife.com/products/amor-fati-ugem-510074?sl-ref=asex0909316199'>【Amor Fati 海王瓶 增量瑪卡熱感精華液 30ml】</a> x 1<br/>累積籤王次數最多可得</p>
              )}
              
              {activeModal === 'guide-line' && (
                 <>
-                   <p>1. <b>綁定手機</b>：請輸入 Ocard 註冊手機。</p>
-                   <p>2. <b>結果同步</b>：求籤結果將記錄於會員系統。</p>
+                   <p>1. <b>求一份雞緣</b>：在神廟中虔誠祈禱，抽取專屬於你的籤詩，探索你的尺寸指引</p>
+                  <p>2. <b>門市出示畫面</b>：親密顧問會指引你，走向正確領獎方式</p>
+                  <p>3. <b>領取優惠券</b>：每個帳號可以領取一次 Line 好友優惠券</p>
+                  <p>4. <b>回家繼續抽</b>：截圖分享給<a href='https://lin.ee/877jnDE'>官方客服</a>領取官網優惠券</p>
                 </>
              )}
              {activeModal === 'prizes-line' && (
-                <p>【門市優惠券】 x 1<br/>消費滿額贈禮</p>
+                <><p>【門市優惠券 100 元】 x ∞ <br />參加獎</p><p>【官網優惠券 100 元】 x ∞ <br />參加獎</p><p>【潮吹熱浪隨身包三入】 x 1<br />抽中籤王馬上帶走</p></>
              )}
 
              {activeModal === 'guide-guest' && (
                 <>
-                  <p>1. <b>快速體驗</b>：輸入暱稱即可馬上求籤。</p>
-                  <p>2. <b>功能限制</b>：訪客無法累積紀錄或領獎。</p>
+                  <p>1. <b>快速體驗</b>：輸入暱稱即可馬上求籤</p>
+                  <p>2. <b>第一重抽獎</b>：保存圖片分享至 Instagram 限時動態，並標註官方帳號 @rxing_taiwan</p>
+                  <p>3. <b>第二重抽獎</b>：保存圖片分享至 Threads 此篇貼文留言區</p>
                 </>
              )}
              {activeModal === 'prizes-guest' && (
-                <p>目前僅提供運勢占卜體驗<br/>加入 Discord 或 Ocard 解鎖獎品！</p>
+                 <><p>【門市優惠券 100 元】 x ∞ <br />參加獎</p><p><a href='https://www.rxinglife.com/products/amor-fati-ugem-510074?sl-ref=asex0909316199'>【Amor Fati 海王瓶 增量瑪卡熱感精華液 30ml】</a> x 2<br />Instagram / Threads 各抽出一名</p></>
              )}
            </div>
            <button className="main-btn dark-btn" onClick={() => setActiveModal(null)}>我知道了</button>
@@ -418,7 +421,7 @@ function App() {
                   <button className="icon-btn" onClick={() => setActiveModal('prizes-guest')}><i className="fa-solid fa-gift"></i></button>
                 </div>
               </div>
-              <p className="card-desc">功能受限，僅供快速體驗</p>
+              <p className="card-desc">功能不受限，快速體驗參加抽獎</p>
               <input 
                 type="text" 
                 className="input-field" 
@@ -455,7 +458,7 @@ function App() {
               {/* 如果是冷卻中，顯示倒數 (使用修正 1 的 historyResult) */}
               {view === 'cooldown' && (
                 <div className="cooldown-view">
-                    <div className="cooldown-title">賢者模式冷卻中</div>
+                    <div className="cooldown-title">聖人模式冷卻中</div>
                     <div id="countdown" className="countdown-digits">{formatTime(cooldownTime)}</div>
                     <div className="cooldown-label">距離下次求籤</div>
                     

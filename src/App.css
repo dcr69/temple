@@ -166,13 +166,29 @@ h1 { font-size: 1.6rem; font-weight: 800; color: #111; margin: 0; letter-spacing
 .card-base.guest-mode .main-btn { background-color: #6c757d; color: #fff; box-shadow: none; }
 .card-base.guest-mode .main-btn:hover { background-color: #5a6268; }
 
-/* 白色大卡片 (求籤機) */
+/* 白色大卡片 (Machine) */
 .white-card-container {
-  background: var(--card-bg); border-radius: 24px; padding: 30px 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 500px;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  position: relative; width: 100%; z-index: 2;
-  max-width: 420px; margin: 0 auto; 
+  background: var(--card-bg);
+  border-radius: 24px;
+  
+  /* ★★★ 修改 1：減少上下內距 (原本是 30px) ★★★ */
+  padding: 24px 20px;
+  
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  
+  /* ★★★ 修改 2：移除原本的 min-height: 500px，改為 auto ★★★ */
+  /* 這樣卡片高度就會剛好包住內容，不會有多餘留白 */
+  min-height: auto; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .tenga-container { width: 150px; height: 150px; margin-bottom: 20px; }

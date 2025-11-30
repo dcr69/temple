@@ -5,7 +5,7 @@ export const CONFIG = {
   DISCORD_GUILD_ID: '1409185978760958043',
   MY_LIFF_ID: '2008584863-dnarvxrD',
   REDIRECT_URI: 'https://dcr69.github.io/temple/', // 或是您 React 的部署網址
-  GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwe0Blb8jKlt-RN0imWu7iixp-YfJBuqv7gxY25vTbZQ2gPGxBdGP4CHTvc79W_Fwgt5A/exec'
+  GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbypETSUihZaeC0l8r0jqII_ZW2ECVFVsyRKiMNGagGs-Es0fOVhelNe_5vpjoqgydkYsw/exec'
 };
 
 export const FORTUNES = [
